@@ -113,7 +113,7 @@ The algorithms of Li~et~al.\ rely on the following data structures:
         where $m = |E|$.
   \item \textbf{Priority queue / max-heap} keyed by vertex degree (or number
         of uncovered neighbors) for the greedy selection in Phase~1.
-  \item \textbf{Union--Find (Disjoint Set Union)} structure for efficiently
+  \item \textbf{Union-Find (Disjoint Set Union)} structure for efficiently
         tracking connected components during Phase~2.
   \item \textbf{BFS/DFS trees} used for computing shortest paths or Steiner
         nodes when connecting the dominating set.
@@ -133,7 +133,7 @@ The first phase greedily builds a dominating set~$D$.  The key idea is to
 iteratively select the vertex that covers the most uncovered neighbors.
 
 \begin{algorithm}[H]
-\caption{Phase 1 -- Greedy Dominating Set}\label{alg:phase1}
+\caption{Phase 1 - Greedy Dominating Set}\label{alg:phase1}
 \begin{algorithmic}[1]
 \REQUIRE Graph $G = (V, E)$
 \ENSURE Dominating set $D$
@@ -159,7 +159,7 @@ The dominating set~$D$ produced by Phase~1 is not necessarily connected.  Phase~
 adds \emph{Steiner nodes} to connect the components of $G[D]$.
 
 \begin{algorithm}[H]
-\caption{Phase 2 -- Connecting via Steiner Nodes}\label{alg:phase2}
+\caption{Phase 2 - Connecting via Steiner Nodes}\label{alg:phase2}
 \begin{algorithmic}[1]
 \REQUIRE Graph $G = (V, E)$, Dominating set $D$
 \ENSURE Connected Dominating Set $C \supseteq D$
@@ -180,7 +180,7 @@ component graph.
 
 \subsection{Theoretical Analysis}
 
-\begin{theorem}[Approximation Ratio -- Li et al.~\cite{li2005}]
+\begin{theorem}[Approximation Ratio - Li et al.~\cite{li2005}]
 The two-phase greedy algorithm produces a CDS of size at most
 $(1 + \ln \Delta) \cdot |C^*| + O(1)$ where $C^*$ is an optimal CDS
 and $\Delta$ is the maximum degree of the graph.
@@ -227,7 +227,7 @@ The implementation consists of the following modules:
         added for pairs at distance~$\leq 1$.
   \item \texttt{cds\_greedy.py}: Implementation of Phase~1 (greedy DS) and
         Phase~2 (Steiner connection) as described in
-        Algorithms~\ref{alg:phase1}--\ref{alg:phase2}.
+        Algorithms~\ref{alg:phase1}-\ref{alg:phase2}.
   \item \texttt{run.py}: Script for running experiments, collecting
         statistics, and generating plots.
   \item \texttt{visualization.py}: Utilities for drawing graphs and CDS
@@ -377,7 +377,7 @@ alternative baseline.
 Greedy DS only (Phase~1)     & 22.3 & 2.8  \\
 Li et al.\ (Phase 1+2)       & 24.1 & 3.2  \\
 Wan et al.\ marking-based     & 26.7 & 3.9  \\
-Guha--Khuller                 & 25.4 & 3.5  \\
+Guha-Khuller                 & 25.4 & 3.5  \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -385,7 +385,7 @@ Guha--Khuller                 & 25.4 & 3.5  \\
 The table shows that Li~et~al.'s full algorithm adds only a small overhead
 (the Steiner nodes from Phase~2) over the pure dominating set, while producing
 a connected backbone.  It outperforms both the marking-based approach of
-Wan~et~al.~\cite{wan2002} and the Guha--Khuller method on our UDG instances.
+Wan~et~al.~\cite{wan2002} and the Guha-Khuller method on our UDG instances.
 
 % ==========================================================================
 \section{Critical Discussion}\label{sec:discussion}
@@ -469,7 +469,7 @@ Several concrete improvements could strengthen the algorithm:
   \item \textbf{Local search post-processing:} After obtaining the CDS, one
         can iteratively try to remove each node and check whether domination
         and connectivity are preserved.  This simple pruning step can reduce
-        the CDS by~$5$--$15\%$ with negligible extra cost.
+        the CDS by~$5$-$15\%$ with negligible extra cost.
   \item \textbf{Distributed adaptation:} Translating the centralized greedy
         into a $k$-round message-passing protocol, where each node estimates
         its uncovered-neighbor count from local beacons, would make the
@@ -529,12 +529,12 @@ sophisticated solutions continue to be built.
 Y.~Li, M.~T.~Thai, F.~Wang, C.-W.~Yi, P.-J.~Wan, and D.-Z.~Du,
 ``On greedy construction of connected dominating sets in wireless networks,''
 \emph{Wireless Communications and Mobile Computing}, vol.~5, no.~8,
-pp.~927--932, 2005.
+pp.~927-932, 2005.
 
 \bibitem{clark1990}
 B.~N.~Clark, C.~J.~Colbourn, and D.~S.~Johnson,
 ``Unit disk graphs,''
-\emph{Discrete Mathematics}, vol.~86, no.~1--3, pp.~165--177, 1990.
+\emph{Discrete Mathematics}, vol.~86, no.~1-3, pp.~165-177, 1990.
 
 \bibitem{garey1979}
 M.~R.~Garey and D.~S.~Johnson,
@@ -544,26 +544,26 @@ W.~H.~Freeman, 1979.
 \bibitem{guha1998}
 S.~Guha and S.~Khuller,
 ``Approximation algorithms for connected dominating sets,''
-\emph{Algorithmica}, vol.~20, no.~4, pp.~374--387, 1998.
+\emph{Algorithmica}, vol.~20, no.~4, pp.~374-387, 1998.
 
 \bibitem{wan2002}
 P.-J.~Wan, K.~M.~Alzoubi, and O.~Frieder,
 ``Distributed construction of connected dominating set in wireless ad hoc
 networks,''
-\emph{Mobile Networks and Applications}, vol.~9, no.~2, pp.~141--149, 2004.
+\emph{Mobile Networks and Applications}, vol.~9, no.~2, pp.~141-149, 2004.
 
 \bibitem{yu2013}
 J.~Yu, N.~Wang, G.~Wang, and D.~Yu,
-``Connected dominating sets in wireless ad hoc and sensor networks -- A
+``Connected dominating sets in wireless ad hoc and sensor networks - A
 comprehensive survey,''
-\emph{Computer Communications}, vol.~36, no.~2, pp.~121--134, 2013.
+\emph{Computer Communications}, vol.~36, no.~2, pp.~121-134, 2013.
 
 \bibitem{vijayasharmila2015}
 S.~Vijayasharmila and R.~Jothilakshmi,
 ``A survey on connected dominating sets (CDS) both in the wireless sensor
 networks and wireless ad hoc networks,''
 \emph{International Journal of Applied Engineering Research}, vol.~10,
-pp.~1--6, 2015.
+pp.~1-6, 2015.
 
 \bibitem{vinayagam2016}
 P.~S.~Vinayagam,
@@ -610,7 +610,7 @@ vol.~7, no.~3, 2016.
 \begin{algorithmic}[1]
 \REQUIRE Graph $G = (V, E)$, Dominating set $D$
 \ENSURE Connected Dominating Set $C$
-\STATE Initialize Union--Find $\mathcal{U}$ with vertices of $D$
+\STATE Initialize Union-Find $\mathcal{U}$ with vertices of $D$
 \STATE Compute connected components of $G[D]$ using $\mathcal{U}$
 \STATE Let $k \leftarrow$ number of components
 \WHILE{$k > 1$}
