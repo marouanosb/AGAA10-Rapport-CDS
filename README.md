@@ -1,4 +1,4 @@
-# AAGA10 — Connected Dominating Sets (Li et al., 2005)
+# AAGA10 - Connected Dominating Sets (Li et al., 2005)
 
 Implementation of the two-phase greedy algorithm for Connected Dominating Sets
 in Unit Disk Graphs, based on:
@@ -62,10 +62,10 @@ This runs the algorithm on random UDG instances with varying sizes
 (n = 50, 100, 200, 500) and densities (avg_degree = 5, 10, 15, 20),
 30 runs each. It produces:
 
-- `src/results/summary.csv` — raw numerical results
-- `src/figures/cds_size.pdf` — CDS size vs. number of nodes
-- `src/figures/exec_time.pdf` — execution time vs. number of nodes
-- `src/figures/approx_ratio.pdf` — Steiner overhead vs. average degree
+- `src/results/summary.csv` - raw numerical results
+- `src/figures/cds_size.pdf` - CDS size vs. number of nodes
+- `src/figures/exec_time.pdf` - execution time vs. number of nodes
+- `src/figures/approx_ratio.pdf` - Steiner overhead vs. average degree
 
 ### Windows alternative (run.bat)
 
